@@ -4,16 +4,16 @@ import { deleteNote } from "../../../actions/notes"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faEdit, faTrashAlt } from "@fortawesome/free-solid-svg-icons"
 import "./styles.css"
+import Form from "../../Form/Form"
 
 const Note = ({ note, setCurrentId }) => {
-    
   const dispatch = useDispatch()
 
   return (
     <div className="note-card">
       <h2>{note.title}</h2>
       <p>{note.note}</p>
-      <p className="tags">{note.tags.map((tag) => `#${tag} `)}</p>
+      <p className="tags">{note.tags.map((tag) => `${tag} `)}</p>
       {/* <small>{moment(note.createdAt).fromNow}</small> */}
       <div>
         <FontAwesomeIcon

@@ -11,7 +11,7 @@ const Notes = ({ setCurrentId }) => {
         <div className="notes-box">
             {notes.map((note) => (
                 <div className="notes" key={note._id}>
-                    <Note note={note} setCurrentId={setCurrentId}/>
+                    <Note note={note} setCurrentId={setCurrentId} />
                 </div>
             ))}
         </div>
