@@ -8,7 +8,7 @@ const Notes = ({ setCurrentId }) => {
   console.log(notes)
   return (
     !notes.length ? 'There is no notes' : (
-        <div className="notes-container">
+        <div className="notes-box">
             {notes.map((note) => (
                 <div className="notes" key={note._id}>
                     <Note note={note} setCurrentId={setCurrentId}/>

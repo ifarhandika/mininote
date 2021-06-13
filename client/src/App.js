@@ -8,6 +8,7 @@ import Notes from "./components/Notes/Notes"
 import Form from "./components/Form/Form"
 
 function App() {
+  const [showAddNote, setShowAddNote] = useState(false)
   const [currentId, setCurrentId] = useState(null)
   const dispatch = useDispatch()
 
@@ -16,17 +17,31 @@ function App() {
   }, [currentId, dispatch])
 
   return (
-    <div className="App">
-      <Header />
-      <div className="container">
-        <div>
-          <Form currentId={currentId} setCurrentId={setCurrentId} />
-        </div>
-        <div>
-          <Notes setCurrentId={setCurrentId} />
+    <Router>
+      <div className="App">
+        <Header />
+        <div className="container">
+          <div className="form-container">
+            <button
+              className="btn btn-add"
+              onClick={() => setShowAddNote(!showAddNote)}
+              style={
+                showAddNote
+                  ? { backgroundColor: "red" }
+                  : { backgroundColor: "green" }
+              }>
+              {showAddNote ? "Close" : "Add Note"}
+            </button>
+            {showAddNote ? (
+              <Form currentId={currentId} setCurrentId={setCurrentId} />
+            ) : null}
+          </div>
+          <div className="notes-container">
+            <Notes setCurrentId={setCurrentId} />
+          </div>
         </div>
       </div>
-    </div>
+    </Router>
   )
 }
 

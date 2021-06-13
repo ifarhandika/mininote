@@ -1,23 +1,33 @@
 .add-form {
   margin-bottom: 40px;
 }
+.add-form h2 {
+  margin-top: 20px;
+}
 
 .form-control {
-  margin: 20px 0;
+  margin: 10px 0;
+  
 }
 
 .form-control label {
   display: block;
+  
 }
 
 .form-control input {
   width: 100%;
   height: 40px;
-  margin: 5px;
+  margin: 3px;
   padding: 3px 7px;
   font-size: 17px;
   color: black;
   border: none;
+  border-radius: 5px;
+}
+.form-control ::placeholder {
+    font-size: 15px;
+    
 }
 
 .form-control-check {
@@ -37,11 +47,11 @@
 
 .btn {
   display: inline-block;
-  background: white;
-  color: black;
+  background: grey;
+  color: white;
   border: none;
   padding: 10px 20px;
-  margin: 5px;
+  margin: 5px 3px;
   border-radius: 5px;
   cursor: pointer;
   text-decoration: none;

@@ -1,8 +1,9 @@
 .note-card{
     background-color: grey;
-    max-width: 250px;
+    max-width: 100%;
     border-radius: 5px;
     padding: 10px;
+    margin: 10px 0;
     display: flex;
     flex-direction: column;
 }
@@ -14,4 +15,8 @@
 
 .note-card > div {
     align-self: flex-end;
+}
+
+.note-card > h2 {
+    font-size: 20px;
 }

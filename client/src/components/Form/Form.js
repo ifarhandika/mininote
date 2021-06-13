@@ -25,10 +25,10 @@ const Form = ({ currentId, setCurrentId, onAdd, showAdd }) => {
     handleClear()
   }
   const handleClear = () => {
-      setCurrentId(null)
-      setNoteData({ title: "", note: "", tags: "" })
+    setCurrentId(null)
+    setNoteData({ title: "", note: "", tags: "" })
   }
-  return ( 
+  return (
     <form className="add-form" onSubmit={handleSubmit}>
       <h2>{currentId ? "Edit" : "Add"} Note</h2>
       <div className="form-control">
@@ -53,17 +53,16 @@ const Form = ({ currentId, setCurrentId, onAdd, showAdd }) => {
         <label>Tags</label>
         <input
           type="text"
-          placeholder="Add Title"
+          placeholder="Add Tags"
           value={noteData.tags}
           onChange={(e) => setNoteData({ ...noteData, tags: e.target.value })}
         />
       </div>
-      <button className="btn btn-block" type="submit">
-        Add Note
-      </button>
-      <button className="btn btn-block" onClick={handleClear}>
-        Clear
-      </button>
+      <div className="btn-control">
+        <button className="btn btn-block" type="submit">
+          {currentId ? "Edit" : "Add"} note
+        </button>
+      </div>
     </form>
   )
 }

@@ -6,7 +6,8 @@ import { faEdit, faTrashAlt } from "@fortawesome/free-solid-svg-icons"
 import "./styles.css"
 
 const Note = ({ note, setCurrentId }) => {
-const dispatch = useDispatch()
+    
+  const dispatch = useDispatch()
 
   return (
     <div className="note-card">
@@ -17,7 +18,7 @@ const dispatch = useDispatch()
       <div>
         <FontAwesomeIcon
           icon={faEdit}
-          style={{ cursor: "pointer" }}
+          style={{ cursor: "pointer", marginRight: "5px" }}
           onClick={() => setCurrentId(note._id)}
         />
         <FontAwesomeIcon
