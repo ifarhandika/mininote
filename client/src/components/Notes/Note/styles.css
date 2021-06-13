@@ -1,0 +1,17 @@
+.note-card{
+    background-color: grey;
+    max-width: 250px;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tags{
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+.note-card > div {
+    align-self: flex-end;
+}
