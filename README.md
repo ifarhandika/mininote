@@ -1,5 +1,5 @@
 # mininote-project
-Project Name: Mininote Project
+Project Name: Mininote Project  
 Tech used: MERN Stack
 
 Deployment: 
