@@ -7,7 +7,8 @@ A simple note app where you can create a new note on your behalf, update it if y
 Deployment:   
   Front-End: https://mininote-project.netlify.app/  
   Back-End: https://mininote-project.herokuapp.com/notes
-  API Documentation: https://mininote-project.herokuapp.com/api-docs/
+ 
+API Documentation: https://mininote-project.herokuapp.com/api-docs/
 
 How to use the App:  
 To add a new notes, users can use the 'Add Note' button on the top left corner. Fill out the inputs, then click 'Add Note'.  
