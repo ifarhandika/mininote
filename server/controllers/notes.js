@@ -1,19 +1,22 @@
 import mongoose from "mongoose"
-
 import NoteMessage from "../model/noteMessage.js"
 
+// GET/READ Notes Request Logic
 export const getNotes = async (req, res) => {
   try {
     const noteMessages = await NoteMessage.find()
+
     res.status(200).json(noteMessages)
   } catch (error) {
     res.status(404).json({ messages: error.message })
   }
 }
+
+// CREATE Notes Request Logic
 export const createNotes = async (req, res) => {
   const note = req.body
-
   const newNote = new NoteMessage(note)
+
   try {
     await newNote.save()
     res.status(201).json(newNote)
@@ -21,6 +24,8 @@ export const createNotes = async (req, res) => {
     res.status(409).json({ message: error.message })
   }
 }
+
+// UPDATE Request Notes Logic
 export const updateNotes = async (req, res) => {
   const { id: _id } = req.params
   const note = req.body
@@ -35,12 +40,13 @@ export const updateNotes = async (req, res) => {
       new: true,
     }
   )
-
   res.json(updatedNote)
 }
 
+// DELETE Request Notes Logic
 export const deleteNotes = async (req, res) => {
   const { id } = req.params
+
   if (!mongoose.Types.ObjectId.isValid(id))
     return res.status(404).send("No notes with that id")
 

@@ -3,19 +3,22 @@ import { useDispatch } from "react-redux"
 import { deleteNote } from "../../../actions/notes"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faEdit, faTrashAlt } from "@fortawesome/free-solid-svg-icons"
-import "./styles.css"
-import Form from "../../Form/Form"
+import "./note.css"
+import moment from "moment"
 
 const Note = ({ note, setCurrentId }) => {
   const dispatch = useDispatch()
 
   return (
     <div className="note-card">
-      <h2>{note.title}</h2>
+      <div className="note-header">
+        <h2>{note.title}</h2>
+        <small>{moment(note.createdAt).fromNow()}</small>
+      </div>
       <p>{note.note}</p>
-      <p className="tags">{note.tags.map((tag) => `${tag} `)}</p>
+      <p className="tags">{note.tags.map((tag) => `#${tag} `)}</p>
       {/* <small>{moment(note.createdAt).fromNow}</small> */}
-      <div>
+      <div className="note-icon">
         <FontAwesomeIcon
           icon={faEdit}
           style={{ cursor: "pointer", marginRight: "5px" }}

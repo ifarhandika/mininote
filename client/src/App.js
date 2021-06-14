@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import "./styles.css"
 import { useDispatch } from "react-redux"
-import { BrowserRouter as Router, Route } from "react-router-dom"
+import { BrowserRouter as Router } from "react-router-dom"
 import { getNotes } from "./actions/notes"
 import Header from "./components/Header/Header"
 import Notes from "./components/Notes/Notes"

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import "./styles.css"
+import "./form.css"
 import { useDispatch, useSelector } from "react-redux"
 import { createNote, updateNote } from "../../actions/notes"
 
@@ -22,12 +22,10 @@ const Form = ({ currentId, setCurrentId, onAdd, showAdd }) => {
     } else {
       dispatch(createNote(noteData))
     }
-    handleClear()
-  }
-  const handleClear = () => {
     setCurrentId(null)
     setNoteData({ title: "", note: "", tags: "" })
   }
+
   return (
     <form className="add-form" onSubmit={handleSubmit}>
       <h2>{currentId ? "Edit" : "Add"} Note</h2>
@@ -55,7 +53,9 @@ const Form = ({ currentId, setCurrentId, onAdd, showAdd }) => {
           type="text"
           placeholder="Add Tags"
           value={noteData.tags}
-          onChange={(e) => setNoteData({ ...noteData, tags: e.target.value })}
+          onChange={(e) =>
+            setNoteData({ ...noteData, tags: e.target.value.split(",") })
+          }
         />
       </div>
       <div className="btn-control">
