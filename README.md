@@ -1,6 +1,6 @@
 # mininote-project
 Project Name: Mininote Project  
-Tech used: MERN Stack
+Tech used: MERN
 
 A simple note app where you can create a new note on your behalf, update it if you want to change something, and delete it if you no longer needs.
 
